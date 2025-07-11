@@ -20,13 +20,21 @@ Este proyecto tiene como objetivo automatizar la búsqueda, descarga, extracció
 
 /
 ├── scraping/ # Scripts para búsqueda y descarga de licitaciones
+
 ├── extraction/ # Scripts para extracción y limpieza de texto de PDFs
+
 ├── nlp_processing/ # Scripts para procesamiento NLP y extracción de datos clave
+
 ├── doc_generation/ # Plantillas y scripts para generación de documentos base
+
 ├── interface/ # Código de la aplicación Streamlit
+
 ├── tests/ # Pruebas unitarias y de integración
+
 ├── requirements.txt # Dependencias del proyecto
+
 ├── README.md # Este archivo
+
 └── LICENSE # Licencia del proyecto
 
 
