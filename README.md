@@ -52,13 +52,6 @@ El proyecto se organiza en etapas secuenciales:
 | 5. Desarrollo de interfaz     | Construcción de la app Streamlit                | 28 - 30 julio    |
 | 6. Pruebas y documentación   | Testeo final, corrección y documentación        | 31 julio         |
 
-| Criterio de Adjudicación                                            | Ponderación (%) | Naturaleza de la Evaluación |
-| :------------------------------------------------------------------ | :-------------- | :-------------------------- |
-| Metodología y Plan de Trabajo                                       | 30%             | Juicio de valor             |
-| Experiencia y Cualificación del Equipo Adscrito                     | 20%             | Juicio de valor             |
-| Medidas para el cumplimiento del principio DNSH y Sostenibilidad    | 10%             | Juicio de valor             |
-| Oferta Económica (Precio Ofertado)                                  | 40%             | Automática                  |
-| **Total**                                                           | **100%**        |                             |
 
 
 
