@@ -62,3 +62,12 @@ El proyecto se organiza en etapas secuenciales:
 | | **Personal técnico**: Declaración indicando el personal técnico o las unidades técnicas, estén o no integradas en la empresa, de los que se dispondrá para la ejecución del contrato, especialmente aquellos responsables del control de calidad. | Declaración responsable que incluya el compromiso de adscribir al contrato el personal con la cualificación y experiencia requerida, así como la titulación y experiencia profesional de los perfiles clave que se propongan para la ejecución del servicio. | Art. 89.1.c) |
 
 
+| Criterio de Adjudicación                                                              | Ponderación (%) | Tipo de Evaluación      |
+| :------------------------------------------------------------------------------------ | :-------------- | :---------------------- |
+| **Metodología y Plan de Trabajo Propuestos**                                          | 35%             | Juicio de Valor         |
+| **Experiencia y Cualificación del Equipo Adscrito al Contrato**                       | 25%             | Juicio de Valor         |
+| **Cumplimiento del Principio de No Causar un Perjuicio Significativo (DNSH) y Medidas de Sostenibilidad** | 10%             | Juicio de Valor         |
+| **Oferta Económica**                                                                  | 30%             | Aplicación de Fórmulas  |
+| **TOTAL**                                                                             | **100%**        |                         |
+
+
