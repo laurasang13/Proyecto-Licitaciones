@@ -1,4 +1,4 @@
-# LiciZemn — Asistente Inteligente para Redacción de Licitaciones Públicas
+# LiciZen — Asistente Inteligente para Redacción de Licitaciones Públicas
 
 **LicitaIA** es un asistente basado en inteligencia artificial diseñado para automatizar la generación de pliegos técnicos y administrativos en licitaciones públicas. El objetivo es facilitar la participación de empresas en concursos públicos, reduciendo errores y tiempo de redacción, a través de un sistema conversacional inteligente.
 
