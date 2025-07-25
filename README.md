@@ -48,11 +48,17 @@
 ## Estructura del repositorio
 LiciZen
 ├── main.py # Lógica principal del asistente
+
 ├── prompts/ # Plantillas de preguntas y redacciones
+
 ├── templates/ # Pliegos base y estructuras .docx / .jinja
+
 ├── utils/ # Funciones auxiliares
+
 ├── .env.example # Variables de entorno (sin claves)
+
 ├── requirements.txt # Dependencias del proyecto
+
 └── README.md # Este documento
 
 
