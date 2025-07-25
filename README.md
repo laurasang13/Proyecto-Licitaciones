@@ -1,3 +1,11 @@
+$$Puntuación_{económica} = \frac{Precio_{mínimo\;ofertado}}{Precio_{oferta\;evaluada}} \times 30$$
+
+Donde:
+*   $Precio_{mínimo\;ofertado}$: Es el precio más bajo de entre todas las ofertas económicas válidamente admitidas.
+*   $Precio_{oferta\;evaluada}$: Es el precio de la oferta económica que se está evaluando.
+
+
+
 # LiciZen — Asistente Inteligente para Redacción de Licitaciones Públicas
 
 **LicitaIA** es un asistente basado en inteligencia artificial diseñado para automatizar la generación de pliegos técnicos y administrativos en licitaciones públicas. El objetivo es facilitar la participación de empresas en concursos públicos, reduciendo errores y tiempo de redacción, a través de un sistema conversacional inteligente.
