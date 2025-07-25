@@ -1,3 +1,12 @@
+| Criterio de Adjudicación                               | Ponderación Máxima (Puntos) | Tipo de Evaluación |
+| :----------------------------------------------------- | :-------------------------- | :----------------- |
+| 1. Oferta Económica                                    | 30                          | Fórmulas (Automática) |
+| 2. Metodología y Plan de Trabajo                       | 35                          | Juicio de Valor    |
+| 3. Equipo y Experiencia                                | 25                          | Juicio de Valor    |
+| 4. Cumplimiento del Principio de "No Causar Daño Significativo" (DNSH) y Sostenibilidad | 10                          | Juicio de Valor    |
+| **TOTAL**                                              | **100**              
+
+
 $$Puntuación_{económica} = \frac{Precio_{mínimo\;ofertado}}{Precio_{oferta\;evaluada}} \times 30$$
 
 Donde:
