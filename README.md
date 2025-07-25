@@ -1,3 +1,19 @@
+# PORTADA
+
+## PLIEGO DE CLÁUSULAS ADMINISTRATIVAS PARTICULARES
+
+### CONTRATO DE SERVICIOS
+
+**ÓRGANO DE CONTRATACIÓN:** Alcaldía del Ayuntamiento de Estella-Lizarra (Navarra).
+
+**TÍTULO DEL PLIEGO:** Pliego de Cláusulas Administrativas Particulares para la contratación del "Servicio integral de mantenimiento, soporte técnico y actualización del sistema informático del Ayuntamiento".
+
+**NÚMERO DE EXPEDIENTE:** [POR COMPLETAR]
+
+**FECHA DE APROBACIÓN:** 12 de Abril de 2025.
+
+
+
 | Criterio de Adjudicación                               | Ponderación Máxima (Puntos) | Tipo de Evaluación |
 | :----------------------------------------------------- | :-------------------------- | :----------------- |
 | 1. Oferta Económica                                    | 30                          | Fórmulas (Automática) |
