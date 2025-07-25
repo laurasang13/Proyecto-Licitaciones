@@ -47,6 +47,7 @@
 
 ## Estructura del repositorio
 LiciZen
+
 ├── main.py # Lógica principal del asistente
 
 ├── prompts/ # Plantillas de preguntas y redacciones
