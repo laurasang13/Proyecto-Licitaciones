@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Pliegos Administrativos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Generador de Pliegos Administrativos</h1>
+        <form id="tenderForm">
+            <fieldset>
+                <legend>Datos del Contrato</legend>
+                <label for="objeto_contrato">Objeto del Contrato:</label>
+                <input type="text" id="objeto_contrato" name="objeto_contrato" required>
+
+                <label for="necesidad_resuelta">Necesidad que resuelve:</label>
+                <input type="text" id="necesidad_resuelta" name="necesidad_resuelta" required>
+
+                <label for="responsable_contrato">Responsable del Contrato (nombre y cargo):</label>
+                <input type="text" id="responsable_contrato" name="responsable_contrato" required>
+
+                <label for="lugar_prestacion">Lugar de Prestación:</label>
+                <input type="text" id="lugar_prestacion" name="lugar_prestacion" required>
+
+                <label for="fecha">A fecha de (ej: 25 de mayo de 2024):</label>
+                <input type="text" id="fecha" name="fecha" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Presupuesto</legend>
+                <label for="pbl_sin_iva">PBL sin IVA (€):</label>
+                <input type="number" id="pbl_sin_iva" name="pbl_sin_iva" step="0.01" required>
+
+                <label for="iva">Tipo de IVA (%):</label>
+                <input type="number" id="iva" name="iva" step="0.01" required>
+
+                <label for="duracion_meses">Duración inicial (meses):</label>
+                <input type="number" id="duracion_meses" name="duracion_meses" required>
+
+                <label for="prorrogas">Meses de prórroga previstos:</label>
+                <input type="number" id="prorrogas" name="prorrogas" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Documentación y Requisitos</legend>
+                <label>Declaración Responsable presentada?</label>
+                <input type="radio" id="declaracion_responsable_si" name="declaracion_responsable" value="true"
+                    required> <label for="declaracion_responsable_si">Sí</label>
+                <input type="radio" id="declaracion_responsable_no" name="declaracion_responsable" value="false"> <label
+                    for="declaracion_responsable_no">No</label>
+
+                <label>Oferta económica lista?</label>
+                <input type="radio" id="oferta_economica_si" name="oferta_economica_si" value="true" required> <label
+                    for="oferta_economica_si">Sí</label>
+                <input type="radio" id="oferta_economica_no" name="oferta_economica_no" value="false"> <label
+                    for="oferta_economica_no">No</label>
+
+                <label>Aceptación del pliego técnico?</label>
+                <input type="radio" id="aceptacion_pliego_si" name="aceptacion_pliego" value="true" required> <label
+                    for="aceptacion_pliego_si">Sí</label>
+                <input type="radio" id="aceptacion_pliego_no" name="aceptacion_pliego" value="false"> <label
+                    for="aceptacion_pliego_no">No</label>
+
+                <label>Equipo cumple perfiles mínimos?</label>
+                <input type="radio" id="equipo_cumple_si" name="equipo_cumple" value="true" required> <label
+                    for="equipo_cumple_si">Sí</label>
+                <input type="radio" id="equipo_cumple_no" name="equipo_cumple" value="false"> <label
+                    for="equipo_cumple_no">No</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>Protección de Datos</legend>
+                <label>¿Se tratarán datos personales por cuenta del contratante?</label>
+                <input type="radio" id="trata_datos_si" name="trata_datos" value="true" required> <label
+                    for="trata_datos_si">Sí</label>
+                <input type="radio" id="trata_datos_no" name="trata_datos" value="false"> <label
+                    for="trata_datos_no">No</label>
+
+                <div id="subcontrata_servidores_div" style="display: none;">
+                    <label for="subcontrata_servidores">¿Se subcontratarán servidores o servicios de tratamiento?
+                        Detallar:</label>
+                    <input type="text" id="subcontrata_servidores" name="subcontrata_servidores">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Subcontratación</legend>
+                <label>¿Se subcontratará alguna parte del servicio?</label>
+                <input type="radio" id="subcontratara_si" name="subcontratara" value="true" required> <label
+                    for="subcontratara_si">Sí</label>
+                <input type="radio" id="subcontratara_no" name="subcontratara" value="false"> <label
+                    for="subcontratara_no">No</label>
+
+                <div id="subcontratas_no_vinculadas_div" style="display: none;">
+                    <label>¿Las subcontratistas son empresas no vinculadas?</label>
+                    <input type="radio" id="no_vinculadas_si" name="subcontratas_no_vinculadas" value="true"> <label
+                        for="no_vinculadas_si">Sí</label>
+                    <input type="radio" id="no_vinculadas_no" name="subcontratas_no_vinculadas" value="false"> <label
+                        for="no_vinculadas_no">No</label>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Criterios de Valoración</legend>
+                <label for="precio_ofertado">Precio ofertado sin IVA (€):</label>
+                <input type="number" id="precio_ofertado" name="precio_ofertado" step="0.01" required>
+
+                <label>¿Verificado que no es anormalmente bajo?</label>
+                <input type="radio" id="anormalmente_bajo_si" name="anormalmente_bajo" value="true" required> <label
+                    for="anormalmente_bajo_si">Sí</label>
+                <input type="radio" id="anormalmente_bajo_no" name="anormalmente_bajo" value="false"> <label
+                    for="anormalmente_bajo_no">No</label>
+            </fieldset>
+
+            <fieldset>
+                <legend>NextGeneration / PRTR</legend>
+                <label>¿Cumple principios medioambientales y antifraude del PRTR?</label>
+                <input type="radio" id="cumple_prtr_si" name="cumple_prtr" value="true" required> <label
+                    for="cumple_prtr_si">Sí</label>
+                <input type="radio" id="cumple_prtr_no" name="cumple_prtr" value="false"> <label
+                    for="cumple_prtr_no">No</label>
+
+                <div id="prtr_details_div" style="display: none;">
+                    <label>Modelos B1, B2 y C cumplimentados?</label>
+                    <input type="radio" id="modelos_b1b2c_si" name="modelos_b1b2c" value="true"> <label
+                        for="modelos_b1b2c_si">Sí</label>
+                    <input type="radio" id="modelos_b1b2c_no" name="modelos_b1b2c" value="false"> <label
+                        for="modelos_b1b2c_no">No</label>
+
+                    <label for="titular_real">Titular real de la empresa:</label>
+                    <input type="text" id="titular_real" name="titular_real">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Garantías</legend>
+                <label>¿Exigir garantía provisional?</label>
+                <input type="radio" id="garantia_provisional_si" name="garantia_provisional" value="true" required>
+                <label for="garantia_provisional_si">Sí</label>
+                <input type="radio" id="garantia_provisional_no" name="garantia_provisional" value="false"> <label
+                    for="garantia_provisional_no">No</label>
+
+                <div id="porcentaje_cuantia_div" style="display: none;">
+                    <label for="porcentaje_cuantia">Porcentaje o cuantía exigida:</label>
+                    <input type="text" id="porcentaje_cuantia" name="porcentaje_cuantia">
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Solvencia</legend>
+                <label for="volumen_anual_negocios_min">Volumen anual de negocios mínimo (€):</label>
+                <input type="number" id="volumen_anual_negocios_min" name="volumen_anual_negocios_min" step="0.01"
+                    required>
+
+                <label for="importe_anual_similares_min">Importe anual de servicios similares mínimo (€):</label>
+                <input type="number" id="importe_anual_similares_min" name="importe_anual_similares_min" step="0.01"
+                    required>
+
+                <label for="seguro_rcp_min">Seguro de responsabilidad civil profesional mínimo (€):</label>
+                <input type="number" id="seguro_rcp_min" name="seguro_rcp_min" step="0.01" required>
+            </fieldset>
+
+            <fieldset>
+                <legend>Ponderación de Criterios</legend>
+                <label for="metodologia_plan">% Metodología y plan de trabajo:</label>
+                <input type="number" id="metodologia_plan" name="metodologia_plan" step="0.01" required>
+
+                <label for="equipo_experiencia">% Equipo y experiencia:</label>
+                <input type="number" id="equipo_experiencia" name="equipo_experiencia" step="0.01" required>
+
+                <label for="oferta_economica">% Oferta económica:</label>
+                <input type="number" id="oferta_economica" name="oferta_economica" step="0.01" required>
+
+                <label for="dnsh_sostenibilidad">% DNSH / Sostenibilidad:</label>
+                <input type="number" id="dnsh_sostenibilidad" name="dnsh_sostenibilidad" step="0.01" required>
+
+
+            </fieldset>
+
+            <button type="submit">Generar Pliego</button>
+        </form>
+
+        <div id="loading" class="hidden">Cargando...</div>
+        <div id="tenderResult">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

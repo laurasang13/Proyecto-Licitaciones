@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Editor de Pliego</title>
+  <link rel="stylesheet" href="https://uicdn.toast.com/editor/latest/toastui-editor.min.css" />
+  <script src="https://uicdn.toast.com/editor/latest/toastui-editor-all.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+  <script src="…toastui-editor-all.min.js" defer></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 1rem;
+      background: #f9f9f9;
+    }
+
+    .container-editor {
+      border: 1px solid #ccc;
+      margin: 0 auto 1rem;
+      max-width: 900px;
+      background: white;
+      padding: 3rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #editorButtons {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      justify-content: center;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    @media print {
+      @page {
+        margin: 2cm;
+      }
+
+      .print-window-body {
+        margin: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container-editor">
+    <h1>Editor de Pliego 📜</h1>
+    <div id="editorButtons">
+      <button id="printEditorContent">🖨️ Imprimir / Guardar como PDF</button>
+      <label for="fileInputEditor" style="cursor: pointer;">📂 Cargar archivo local</label>
+      <input type="file" id="fileInputEditor" accept=".md,.txt" />
+    </div>
+    <div id="editorContainer"></div>
+  </div>
+
+  <script>
+    // Inicializar el editor
+    const editor = new toastui.Editor({
+      el: document.querySelector('#editorContainer'),
+      height: '500px',
+      initialEditType: 'wysiwyg',
+      hideModeSwitch: true,
+      initialValue: ''
+    });
+document.getElementById('fileInputEditor')
+  .addEventListener('change', e => {
+    const file = e.target.files[0];
+    if (!file) return;
+    file.text().then(texto => editor.setMarkdown(texto));
+  });
+
+    // Botón manual para imprimir/guardar
+    document.getElementById('printEditorContent').addEventListener('click', () => {
+  // 1. obtenemos el HTML limpio del editor
+  const html = editor.getHTML();
+
+  // 2. CSS mínimo para márgenes + “no cortes”
+  const css = `
+  @page { margin: 2cm 3cm; }
+
+  body  { font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #0d0d0d, #2c003e);
+    background-attachment: fixed;
+    color: #f0f0f0;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+
+  /* evita que se partan bloques */
+  p,h1,h2,h3,ul,ol,blockquote,table,pre,figure {
+    break-after: avoid;
+    break-inside: avoid;
+  }
+
+  /* tablas con borde */
+  table            { width:100%; border-collapse:collapse; }
+  th, td           { border:0.5pt solid #000; padding:0.3em; }
+  thead th         { background:#f0f0f0; }
+`;
+
+
+  // 3. abrimos ventana blanca, inyectamos y lanzamos impresión
+  const win = window.open('', '_blank');
+  if (!win) { alert('❌ Bloqueado por el navegador. Permite ventanas emergentes.'); return; }
+
+  win.document.head.innerHTML = `<title>Pliego</title><style>${css}</style>`;
+  win.document.body.innerHTML = html;
+  win.document.close();
+  win.focus();
+  win.print();           // aparecerá diálogo “Imprimir / Guardar como PDF”
+});
+
+
+      
+    // Cargar contenido desde localStorage sin generar PDF automáticamente
+    document.addEventListener('DOMContentLoaded', () => {
+      const contenido = localStorage.getItem('generatedPliegoContent');
+      if (contenido) {
+        editor.setMarkdown(contenido);
+        localStorage.removeItem('generatedPliegoContent');
+      }
+    });
+  </script>
+</body>
+</html>
